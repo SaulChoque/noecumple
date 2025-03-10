@@ -10,9 +10,9 @@ import * as AOS from 'aos';
 export class ScrollBlockComponent {
 
   // CONSTANTES IMAGENES
-  PAGE1 = './../../../assets/images/png/page1.png';
-  PAGE2 = './../../../assets/images/png/page2.png';
-  PAGE3 = './../../../assets/images/png/page3.png';
+  PAGE1 = 'assets/images/png/page1.png';
+  PAGE2 = 'assets/images/png/page2.png';
+  PAGE3 = 'assets/images/png/page3.png';
   // VARIABLES IMAGENES
   contentImage = this.PAGE1;
   backImage = '';
@@ -25,9 +25,9 @@ export class ScrollBlockComponent {
   contentPhrase = this.PHRASE1;
 
   //CONSTANTES IMAGENES
-  IMGPAGE1 = './../../../assets/images/backgrounds/bc1.png';
-  IMGPAGE2 = './../../../assets/images/backgrounds/bc2.png';
-  IMGPAGE3 = './../../../assets/images/backgrounds/bc3.jpg';
+  IMGPAGE1 = 'assets/images/backgrounds/bc1.png';
+  IMGPAGE2 = 'assets/images/backgrounds/bc2.png';
+  IMGPAGE3 = 'assets/images/backgrounds/bc3.jpg';
 
   private startY: number = 0;
   private currentPage: number = 1;
