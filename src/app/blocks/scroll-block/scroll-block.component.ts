@@ -1,13 +1,14 @@
-import { Component, HostListener, Renderer2, ElementRef } from '@angular/core';
+import { Component, HostListener, Renderer2, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as AOS from 'aos';
+import { AppStateService } from '../../services/app-state.service';
 
 @Component({
   selector: 'app-scroll-block',
   templateUrl: './scroll-block.component.html',
   styleUrls: ['./scroll-block.component.scss']
 })
-export class ScrollBlockComponent {
+export class ScrollBlockComponent implements OnInit {
 
   // CONSTANTES IMAGENES
   PAGE1 = 'assets/images/png/page1.png';
@@ -33,10 +34,19 @@ export class ScrollBlockComponent {
   private currentPage: number = 1;
   private isAnimating: boolean = false; // Bandera para controlar la animación
 
-  constructor(private renderer: Renderer2, private el: ElementRef, private router: Router) {}
+  constructor(
+    private renderer: Renderer2,
+    private el: ElementRef,
+    private router: Router,
+    private appStateService: AppStateService
+  ) {}
 
   ngOnInit() {
     AOS.init();
+    if (this.appStateService.getIsPageReloaded()) {
+      this.router.navigate(['']); // Redirige a la ruta raíz
+      this.appStateService.resetPageReloadedFlag();
+    }
   }
 
   @HostListener('window:touchstart', ['$event'])
@@ -135,5 +145,14 @@ export class ScrollBlockComponent {
       }
       this.renderer.setAttribute(backgroundImg, 'id', 'background-img'); // Vuelve a añadir el atributo id original
     }, 1000); // Espera 1 segundo antes de volver a agregar el atributo id original
+  }
+
+  resetPage() {
+    this.currentPage = 1;
+    this.contentImage = this.PAGE1;
+    this.contentPhrase = this.PHRASE1;
+    this.updateImages();
+    this.updateText();
+    this.updateBackgroundImage();
   }
 }

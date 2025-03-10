@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2, ElementRef, inject } from '@angular/core'
 import { Router } from '@angular/router';
 import * as AOS from 'aos';
 import { CurrentTransitionService } from '../../services/CurrentTransition.service';
+import { AppStateService } from '../../services/app-state.service';
 
 @Component({
   selector: 'app-number-block',
@@ -19,10 +20,19 @@ export class NumberBlockComponent implements OnInit {
     return isNumberBlock ? 'number-block-transition' : '';
   }
 
-  constructor(private renderer: Renderer2, private el: ElementRef, private router: Router) {}
+  constructor(
+    private renderer: Renderer2,
+    private el: ElementRef,
+    private router: Router,
+    private appStateService: AppStateService
+  ) {}
 
   ngOnInit() {
     AOS.init();
+    if (this.appStateService.getIsPageReloaded()) {
+      this.router.navigate(['']); // Redirige a la ruta raíz
+      this.appStateService.resetPageReloadedFlag();
+    }
     this.changeAosAttribute();
     this.navigateToRoute();
   }
@@ -40,10 +50,12 @@ export class NumberBlockComponent implements OnInit {
   }
 
   navigateToRoute() {
-
     setTimeout(() => {
       this.router.navigate(['/e']);
     }, 3000); // Espera 2 segundos antes de navegar a la ruta '/e'
+  }
 
+  resetPage() {
+    // Reinicia el estado del componente aquí
   }
 }
