@@ -1,10 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
-import { CurtainBlockComponent } from "./blocks/curtain-block/curtain-block.component";
-import { OpeningBlockComponent } from './blocks/opening-block/opening-block.component';
 import { routeTransition } from './animations/route-transition';
-import 'aos/src/sass/aos.scss';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
