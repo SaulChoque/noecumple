@@ -1,0 +1,110 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+  background-color: #000000;
+  flex-direction: column;
+}
+
+.flameImg{
+  position: fixed;
+  opacity: 0;
+}
+
+.numberText {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 3s ease;
+}
+.upNumbers{
+  position: relative;
+}
+
+.downNumbers{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 1em;
+}
+
+.numberFive{
+  position: relative;
+}
+
+
+[data-aos="numberOne"] {
+  color: white; /* Cambia el color aquí */
+  position: relative;
+  transform: translateX(-200px);
+  opacity: 0;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+[data-aos="flameImgg"] {
+  color: white; /* Cambia el color aquí */
+  position: fixed;
+  transform: translateX(20px) translateY(-260px);
+  opacity: 1;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: translateX(20px) translateY(-260px);
+    opacity: 1;
+  }
+}
+[data-aos="numberFour"] {
+  color: white; /* Cambia el color aquí */
+  position: relative;
+  transform: translateX(200px);
+  opacity: 0;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+[data-aos="numberFourSecond"] {
+  color: white; /* Cambia el color aquí */
+  position: relative;
+  transform: translateY(0px);
+  opacity: 1;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: translateY(171px);
+    opacity: 0;
+  }
+}
+
+
+
+
+[data-aos="numberFive"].aos-animate {
+    transform: translateX(110px) translateY(0px);
+    opacity: 1;
+}
+
+
+[data-aos="numberFiveSecond"] {
+  color: white; /* Cambia el color aquí */
+  position: relative;
+  transform: translateX(110px) translateY(0px);
+  opacity: 0;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: translateX(110px) translateY(171px);
+    opacity: 1;
+  }
+}

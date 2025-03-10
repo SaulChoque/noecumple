@@ -1,0 +1,333 @@
+
+//$aos-distance: -1px;
+$accent:d90b0b;
+.rnOuter {
+  view-transition-name: rnOuter;
+  contain: layout;
+}
+.rnOuter {
+  view-transition-name: rnInner;
+  contain: layout;
+}
+
+
+
+.rnInner {
+  width: 100%;
+  position: absolute;
+  top:-10%; right: 0;  bottom: 0; left: 0;
+  margin: auto;
+  transform-style: preserve-3d;
+  transition: transform 6s ease;
+  transform-origin: -120% top;
+
+}
+
+
+.rnOuter {
+  background: darken(hsl(0, 0%, 0%),12%);
+  overflow: hidden;
+  position:relative;
+  height:100vh;
+}
+
+
+.rnUnit {
+    width: 20vw;
+    height: 120vh;
+    background:
+        repeating-linear-gradient(
+            to left,
+            #ff0000 4vw,
+            darken(#ff0000,20%) 8vw,
+            lighten(#ff0000,20%) 20vw );
+
+    background-size:  100% 100%;
+    display:inline-block;
+    transform-origin: 0 0%;
+    transform: rotate(3deg);
+    animation: rnUnit 2s ease infinite, mymove 1s ease-in-out;
+  }
+
+  @keyframes mymove {
+    0% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #000000 4vw,
+          darken(#000000, 20%) 8vw,
+          lighten(#1f1d1d, 20%) 20vw
+        );
+    }
+    29% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #000000 4vw,
+          darken(#000000, 20%) 8vw,
+          lighten(#000000, 20%) 20vw
+        );
+    }
+    30% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #141313 4vw,
+          darken(#141313, 20%) 8vw,
+          lighten(#141313, 20%) 20vw
+        );
+    }
+    33% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #161414 4vw,
+          darken(#161414, 20%) 8vw,
+          lighten(#161414, 20%) 20vw
+        );
+    }
+    37% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #191616 4vw,
+          darken(#191616, 20%) 8vw,
+          lighten(#191616, 20%) 20vw
+        );
+    }
+    40% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #1d1818 4vw,
+          darken(#1d1818, 20%) 8vw,
+          lighten(#1d1818, 20%) 20vw
+        );
+    }
+    44% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #241b1b 4vw,
+          darken(#241b1b, 20%) 8vw,
+          lighten(#241b1b, 20%) 20vw
+        );
+    }
+    47% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #291d1d 4vw,
+          darken(#291d1d, 20%) 8vw,
+          lighten(#291d1d, 20%) 20vw
+        );
+    }
+    51% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #372424 4vw,
+          darken(#372424, 20%) 8vw,
+          lighten(#372424, 20%) 20vw
+        );
+    }
+    54% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #462b2b 4vw,
+          darken(#462b2b, 20%) 8vw,
+          lighten(#462b2b, 20%) 20vw
+        );
+    }
+    58% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #4f2e2e 4vw,
+          darken(#4f2e2e, 20%) 8vw,
+          lighten(#4f2e2e, 20%) 20vw
+        );
+    }
+    61% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #663737 4vw,
+          darken(#663737, 20%) 8vw,
+          lighten(#663737, 20%) 20vw
+        );
+    }
+    65% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #703737 4vw,
+          darken(#703737, 20%) 8vw,
+          lighten(#703737, 20%) 20vw
+        );
+    }
+    68% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #813737 4vw,
+          darken(#813737, 20%) 8vw,
+          lighten(#813737, 20%) 20vw
+        );
+    }
+    72% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #8e3535 4vw,
+          darken(#8e3535, 20%) 8vw,
+          lighten(#8e3535, 20%) 20vw
+        );
+    }
+    75% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #983030 4vw,
+          darken(#983030, 20%) 8vw,
+          lighten(#983030, 20%) 20vw
+        );
+    }
+    79% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #9e2a2a 4vw,
+          darken(#9e2a2a, 20%) 8vw,
+          lighten(#9e2a2a, 20%) 20vw
+        );
+    }
+    82% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #a82525 4vw,
+          darken(#a82525, 20%) 8vw,
+          lighten(#a82525, 20%) 20vw
+        );
+    }
+    86% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #ab1e1e 4vw,
+          darken(#ab1e1e, 20%) 8vw,
+          lighten(#ab1e1e, 20%) 20vw
+        );
+    }
+    89% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #b31818 4vw,
+          darken(#b31818, 20%) 8vw,
+          lighten(#b31818, 20%) 20vw
+        );
+    }
+    93% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #c71010 4vw,
+          darken(#c71010, 20%) 8vw,
+          lighten(#c71010, 20%) 20vw
+        );
+    }
+    96% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #e40808 4vw,
+          darken(#e40808, 20%) 8vw,
+          lighten(#e40808, 20%) 20vw
+        );
+    }
+    100% {
+      background:
+        repeating-linear-gradient(
+          to left,
+          #ff0000 4vw,
+          darken(#ff0000, 20%) 8vw,
+          lighten(#ff0000, 20%) 20vw
+        );
+    }
+  }
+
+
+
+
+@keyframes rnUnit {
+    50% {
+        transform: rotate(-3deg) ;
+    }
+}
+
+.rnUnit:nth-child(1) {
+    animation-delay: -0.1s;
+}
+.rnUnit:nth-child(2) {
+    animation-delay: -0.2s;
+}
+.rnUnit:nth-child(3) {
+    animation-delay: -0.3s;
+}
+.rnUnit:nth-child(4) {
+    animation-delay: -0.4s;
+}
+.rnUnit:nth-child(5) {
+    animation-delay: -0.5s;
+}
+.rnUnit:nth-child(6) {
+    animation-delay: -0.6s;
+}
+.rnUnit:nth-child(7) {
+    animation-delay: -.7s;
+}
+.rnUnit:nth-child(8) {
+    animation-delay: -.8s;
+}
+.rnUnit:nth-child(9) {
+    animation-delay: -.9s;
+}
+.rnUnit:nth-child(10) {
+    animation-delay: -1s;
+}
+
+
+
+.aoTable {
+    display: table;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+.text-curtain-container {
+    color: darken(rgb(0, 0, 0), 12%);
+    display: table-cell;
+    vertical-align: middle;
+    transition: color 3s ease;
+    //font: optional;
+
+    h1 {
+        font-size: 3em;
+        font-family: "Imperial Script", cursive;
+    }
+}
+
+#curtainAnim.rnInner {
+  transform-origin: -120% top;
+  transform: scaleX(0);
+}
+
+#curtainAnim.text-curtain-container{
+  color: white;
+}
+
+
+
