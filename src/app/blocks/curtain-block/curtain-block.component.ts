@@ -30,12 +30,16 @@ export class CurtainBlockComponent {
       this.scrollCount++;
       if (this.scrollCount === 1) {
         console.log('Primer desplazamiento hacia arriba detectado');
-        const rnInnerElement = document.querySelector('.rnInner');
+        const rnInnerLeftElement = document.querySelector('.rnInnerLeft');
+        const rnInnerRightElement = document.querySelector('.rnInnerRight');
         const textCurtainContainer = document.querySelector('.text-curtain-container');
-        if (rnInnerElement) {
+        const rnOuter = document.querySelector('.rnOuter');
+        if (rnInnerLeftElement && rnInnerRightElement) {
           this.isAnimating = true; // Establece la bandera de animación
-          this.renderer.setAttribute(rnInnerElement, 'id', 'curtainAnim');
+          this.renderer.setAttribute(rnInnerLeftElement, 'id', 'curtainAnimLeft');
+          this.renderer.setAttribute(rnInnerRightElement, 'id', 'curtainAnimRight');
           this.renderer.setAttribute(textCurtainContainer, 'id', 'curtainAnim');
+          this.renderer.setAttribute(rnOuter, 'id', 'curtainAnim');
           setTimeout(() => {
             this.isAnimating = false; // Restablece la bandera de animación después de la duración de la animación
           }, this.animationDuration);

@@ -1,14 +1,6 @@
 
 //$aos-distance: -1px;
 $accent:d90b0b;
-.rnOuter {
-  view-transition-name: rnOuter;
-  contain: layout;
-}
-.rnOuter {
-  view-transition-name: rnInner;
-  contain: layout;
-}
 
 
 
@@ -17,23 +9,73 @@ $accent:d90b0b;
   position: absolute;
   top:-10%; right: 0;  bottom: 0; left: 0;
   margin: auto;
+  display: flex;
+
+}
+
+.rnInnerLeft {
+  width: 100%;
+  top:-10%; right: 0;  bottom: 0; left: 0;
+  margin: auto;
   transform-style: preserve-3d;
   transition: transform 6s ease;
   transform-origin: -120% top;
 
 }
+.rnInnerRight {
+  width: 100%;
+  top:-10%; right: 0;  bottom: 0; left: 0;
+  margin: auto;
+  transform-style: preserve-3d;
+  transition: transform 6s ease;
+  transform-origin: 120% top;
 
+}
 
 .rnOuter {
-  background: darken(hsl(0, 0%, 0%),12%);
+  background: darken(#de695f,12%);
   overflow: hidden;
   position:relative;
   height:100vh;
+  transition: background 3s ease;
+  animation: backColor 1s ease-in-out;
 }
 
+@keyframes backColor {
+  0% {
+    background: darken(#000000,12%);
+  }
 
-.rnUnit {
-    width: 20vw;
+  100% {
+    background: darken(#de695f,12%);
+  }
+}
+
+.text-curtain-container {
+  color: darken(#de695f, 12%);
+  display: table-cell;
+  vertical-align: middle;
+  transition: color 2s ease;
+  animation: colore 1s ease-in-out;
+
+  h1 {
+      font-size: 3em;
+      font-family: "Imperial Script", cursive;
+  }
+}
+
+@keyframes backColor {
+  0% {
+    color: darken(#000000,12%);
+  }
+
+  100% {
+    color: darken(#de695f,12%);
+  }
+}
+
+#left.rnUnit {
+    width: 16.6vw;
     height: 120vh;
     background:
         repeating-linear-gradient(
@@ -46,11 +88,99 @@ $accent:d90b0b;
     display:inline-block;
     transform-origin: 0 0%;
     transform: rotate(3deg);
-    animation: rnUnit 2s ease infinite, mymove 1s ease-in-out;
+    animation: rnUnitLeft 2s ease infinite, mymoveLeft 1s ease-in-out;
   }
 
+#right.rnUnit {
+    width: 16.6vw;
+    height: 120vh;
+    background:
+        repeating-linear-gradient(
+            to right,
+            #ff0000 4vw,
+            darken(#ff0000,20%) 8vw,
+            adjust-color(#ff0000, $lightness: 20%) 20vw );
+
+    background-size:  100% 100%;
+    display:inline-block;
+    transform-origin: 0 0%;
+    transform: rotate(-3deg);
+    animation: rnUnitRight 2s ease infinite, mymoveRight 1s ease-in-out;
+  }
+
+  @keyframes rnUnitLeft {
+    50% {
+        transform: rotate(-3deg) ;
+    }
+}
+
+#left.rnUnit:nth-child(1) {    animation-delay: -0.1s;}
+#left.rnUnit:nth-child(2) {    animation-delay: -0.2s;}
+#left.rnUnit:nth-child(3) {    animation-delay: -0.3s;}
+#left.rnUnit:nth-child(4) {    animation-delay: -0.4s;}
+#left.rnUnit:nth-child(5) {    animation-delay: -0.5s;}
+#left.rnUnit:nth-child(6) {    animation-delay: -0.6s;}
+#left.rnUnit:nth-child(7) {    animation-delay: -.7s;}
+#left.rnUnit:nth-child(8) {    animation-delay: -.8s;}
+#left.rnUnit:nth-child(9) {    animation-delay: -.9s;}
+#left.rnUnit:nth-child(10) {    animation-delay: -1s;}
+
+
+  @keyframes rnUnitRight {
+    50% {
+        transform: rotate(3deg) ;
+    }
+}
+#right.rnUnit:nth-child(1) {    animation-delay: -0.1s;}
+#right.rnUnit:nth-child(2) {    animation-delay: -0.2s;}
+#right.rnUnit:nth-child(3) {    animation-delay: -0.3s;}
+#right.rnUnit:nth-child(4) {    animation-delay: -0.4s;}
+#right.rnUnit:nth-child(5) {    animation-delay: -0.5s;}
+#right.rnUnit:nth-child(6) {    animation-delay: -0.6s;}
+#right.rnUnit:nth-child(7) {    animation-delay: -.7s;}
+#right.rnUnit:nth-child(8) {    animation-delay: -.8s;}
+#right.rnUnit:nth-child(9) {    animation-delay: -.9s;}
+#right.rnUnit:nth-child(10) {    animation-delay: -1s;}
+
+
+.rnUnit:nth-child(1) {
+    animation-delay: -0.1s;
+}
+.rnUnit:nth-child(2) {
+    animation-delay: -0.2s;
+}
+.rnUnit:nth-child(3) {
+    animation-delay: -0.3s;
+}
+.rnUnit:nth-child(4) {
+    animation-delay: -0.4s;
+}
+.rnUnit:nth-child(5) {
+    animation-delay: -0.5s;
+}
+.rnUnit:nth-child(6) {
+    animation-delay: -0.6s;
+}
+.rnUnit:nth-child(7) {
+    animation-delay: -.7s;
+}
+.rnUnit:nth-child(8) {
+    animation-delay: -.8s;
+}
+.rnUnit:nth-child(9) {
+    animation-delay: -.9s;
+}
+.rnUnit:nth-child(10) {
+    animation-delay: -1s;
+}
+
+
+
+
+
+
 // ...código existente...
-@keyframes mymove {
+@keyframes mymoveLeft {
   0% {
     background:
       repeating-linear-gradient(
@@ -259,48 +389,222 @@ $accent:d90b0b;
       );
   }
 }
+
+@keyframes mymoveRight {
+  0% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #000000 4vw,
+        darken(#000000, 20%) 8vw,
+        adjust-color(#1f1d1d, $lightness: 20%) 20vw
+      );
+  }
+  29% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #000000 4vw,
+        darken(#000000, 20%) 8vw,
+        adjust-color(#000000, $lightness: 20%) 20vw
+      );
+  }
+  30% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #141313 4vw,
+        darken(#141313, 20%) 8vw,
+        adjust-color(#141313, $lightness: 20%) 20vw
+      );
+  }
+  33% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #161414 4vw,
+        darken(#161414, 20%) 8vw,
+        adjust-color(#161414, $lightness: 20%) 20vw
+      );
+  }
+  37% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #191616 4vw,
+        darken(#191616, 20%) 8vw,
+        adjust-color(#191616, $lightness: 20%) 20vw
+      );
+  }
+  40% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #1d1818 4vw,
+        darken(#1d1818, 20%) 8vw,
+        adjust-color(#1d1818, $lightness: 20%) 20vw
+      );
+  }
+  44% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #241b1b 4vw,
+        darken(#241b1b, 20%) 8vw,
+        adjust-color(#241b1b, $lightness: 20%) 20vw
+      );
+  }
+  47% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #291d1d 4vw,
+        darken(#291d1d, 20%) 8vw,
+        adjust-color(#291d1d, $lightness: 20%) 20vw
+      );
+  }
+  51% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #372424 4vw,
+        darken(#372424, 20%) 8vw,
+        adjust-color(#372424, $lightness: 20%) 20vw
+      );
+  }
+  54% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #462b2b 4vw,
+        darken(#462b2b, 20%) 8vw,
+        adjust-color(#462b2b, $lightness: 20%) 20vw
+      );
+  }
+  58% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #4f2e2e 4vw,
+        darken(#4f2e2e, 20%) 8vw,
+        adjust-color(#4f2e2e, $lightness: 20%) 20vw
+      );
+  }
+  61% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #663737 4vw,
+        darken(#663737, 20%) 8vw,
+        adjust-color(#663737, $lightness: 20%) 20vw
+      );
+  }
+  65% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #703737 4vw,
+        darken(#703737, 20%) 8vw,
+        adjust-color(#703737, $lightness: 20%) 20vw
+      );
+  }
+  68% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #813737 4vw,
+        darken(#813737, 20%) 8vw,
+        adjust-color(#813737, $lightness: 20%) 20vw
+      );
+  }
+  72% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #8e3535 4vw,
+        darken(#8e3535, 20%) 8vw,
+        adjust-color(#8e3535, $lightness: 20%) 20vw
+      );
+  }
+  75% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #983030 4vw,
+        darken(#983030, 20%) 8vw,
+        adjust-color(#983030, $lightness: 20%) 20vw
+      );
+  }
+  79% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #9e2a2a 4vw,
+        darken(#9e2a2a, 20%) 8vw,
+        adjust-color(#9e2a2a, $lightness: 20%) 20vw
+      );
+  }
+  82% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #a82525 4vw,
+        darken(#a82525, 20%) 8vw,
+        adjust-color(#a82525, $lightness: 20%) 20vw
+      );
+  }
+  86% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #ab1e1e 4vw,
+        darken(#ab1e1e, 20%) 8vw,
+        adjust-color(#ab1e1e, $lightness: 20%) 20vw
+      );
+  }
+  89% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #b31818 4vw,
+        darken(#b31818, 20%) 8vw,
+        adjust-color(#b31818, $lightness: 20%) 20vw
+      );
+  }
+  93% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #c71010 4vw,
+        darken(#c71010, 20%) 8vw,
+        adjust-color(#c71010, $lightness: 20%) 20vw
+      );
+  }
+  96% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #e40808 4vw,
+        darken(#e40808, 20%) 8vw,
+        adjust-color(#e40808, $lightness: 20%) 20vw
+      );
+  }
+  100% {
+    background:
+      repeating-linear-gradient(
+        to right,
+        #ff0000 4vw,
+        darken(#ff0000, 20%) 8vw,
+        adjust-color(#ff0000, $lightness: 20%) 20vw
+      );
+  }
+}
 // ...código existente...
 // ...código existente...
 
 
 
 
-@keyframes rnUnit {
-    50% {
-        transform: rotate(-3deg) ;
-    }
-}
-
-.rnUnit:nth-child(1) {
-    animation-delay: -0.1s;
-}
-.rnUnit:nth-child(2) {
-    animation-delay: -0.2s;
-}
-.rnUnit:nth-child(3) {
-    animation-delay: -0.3s;
-}
-.rnUnit:nth-child(4) {
-    animation-delay: -0.4s;
-}
-.rnUnit:nth-child(5) {
-    animation-delay: -0.5s;
-}
-.rnUnit:nth-child(6) {
-    animation-delay: -0.6s;
-}
-.rnUnit:nth-child(7) {
-    animation-delay: -.7s;
-}
-.rnUnit:nth-child(8) {
-    animation-delay: -.8s;
-}
-.rnUnit:nth-child(9) {
-    animation-delay: -.9s;
-}
-.rnUnit:nth-child(10) {
-    animation-delay: -1s;
-}
 
 
 
@@ -310,26 +614,24 @@ $accent:d90b0b;
     height: 100vh;
     text-align: center;
 }
-.text-curtain-container {
-    color: darken(rgb(0, 0, 0), 12%);
-    display: table-cell;
-    vertical-align: middle;
-    transition: color 3s ease;
-    //font: optional;
 
-    h1 {
-        font-size: 3em;
-        font-family: "Imperial Script", cursive;
-    }
-}
 
-#curtainAnim.rnInner {
+#curtainAnimLeft.rnInnerLeft {
   transform-origin: -120% top;
   transform: scaleX(0);
 }
+#curtainAnimRight.rnInnerRight {
+  transform-origin: 200% top;
+  transform: scaleX(0);
+}
+
+
 
 #curtainAnim.text-curtain-container{
   color: white;
+}
+#curtainAnim.rnOuter{
+  background: rgb(0, 0, 0);
 }
 
 
