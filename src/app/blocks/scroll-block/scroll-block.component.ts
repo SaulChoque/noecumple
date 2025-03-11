@@ -19,7 +19,7 @@ export class ScrollBlockComponent implements OnInit {
   backImage = '';
 
   // CONSTANTES TEXTO
-  PHRASE1 = 'Una niña cuyo corazón iluminó la vida de quienes la rodeaban';
+  PHRASE1 = 'Una niña llamada Noelia cuyo corazón iluminó la vida de quienes la rodeaban';
   PHRASE2 = 'Los años pasaron como hojas en el viento, y ahora...';
   PHRASE3 = 'Esa niña ha florecido en una joven llena de gracia y belleza.';
   // VARIABLES TEXTO
