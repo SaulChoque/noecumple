@@ -1,24 +1,18 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { CurrentTransitionService } from '../../services/CurrentTransition.service';
-import { AppStateService } from '../../services/app-state.service';
 
 @Component({
   selector: 'app-info-block',
   templateUrl: './info-block.component.html',
   styleUrls: ['./info-block.component.scss']
 })
-export class InfoBlockComponent implements OnInit {
+export class InfoBlockComponent{
 
   transitionService = inject(CurrentTransitionService);
-  constructor(private appStateService: AppStateService, private router: Router) {}
+  constructor(private router: Router) {}
 
-  ngOnInit() {
-    if (this.appStateService.getIsPageReloaded()) {
-      this.router.navigate(['']); // Redirige a la ruta raíz
-      this.appStateService.resetPageReloadedFlag();
-    }
-  }
+
 
   viewTransitionName() {
     const transition = this.transitionService.currentTransition();
@@ -26,7 +20,4 @@ export class InfoBlockComponent implements OnInit {
     return isInfoBlock ? 'number-text-transition' : '';
   }
 
-  resetPage() {
-    // Reinicia el estado del componente aquí
-  }
 }

@@ -1,29 +1,24 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppStateService } from '../../services/app-state.service';
+
 
 @Component({
   selector: 'app-opening-block',
   templateUrl: './opening-block.component.html',
   styleUrls: ['./opening-block.component.scss']
 })
-export class OpeningBlockComponent implements OnInit {
-  constructor(private router: Router, private appStateService: AppStateService) {}
+export class OpeningBlockComponent{
 
-  ngOnInit() {
-    if (this.appStateService.getIsPageReloaded()) {
-      this.router.navigate(['']); // Redirige a la ruta raíz
-      this.appStateService.resetPageReloadedFlag();
-    }
+  constructor(private router: Router) {
+    this.routerMove = this.routerMove.bind(this); // Enlaza el contexto de `this`
   }
 
-  @HostListener('window:touchstart', ['$event'])
-  onWindowTouch(event: TouchEvent) {
-    console.log('Pantalla tocada');
-    this.router.navigate(['/b']); // Cambia '/b' por la ruta a la que deseas navegar
+  ngAfterViewInit() {
+    // Espera a que el usuario interactúe con la página para reproducir el audio
+    document.addEventListener('click', this.routerMove, { once: true });
   }
 
-  resetPage() {
-    // Reinicia el estado del componente aquí
+  routerMove() {
+    this.router.navigate(['/b']);
   }
 }

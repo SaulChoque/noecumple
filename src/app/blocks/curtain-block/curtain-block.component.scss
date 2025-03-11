@@ -40,7 +40,7 @@ $accent:d90b0b;
             to left,
             #ff0000 4vw,
             darken(#ff0000,20%) 8vw,
-            lighten(#ff0000,20%) 20vw );
+            adjust-color(#ff0000, $lightness: 20%) 20vw );
 
     background-size:  100% 100%;
     display:inline-block;
@@ -49,215 +49,218 @@ $accent:d90b0b;
     animation: rnUnit 2s ease infinite, mymove 1s ease-in-out;
   }
 
-  @keyframes mymove {
-    0% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #000000 4vw,
-          darken(#000000, 20%) 8vw,
-          lighten(#1f1d1d, 20%) 20vw
-        );
-    }
-    29% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #000000 4vw,
-          darken(#000000, 20%) 8vw,
-          lighten(#000000, 20%) 20vw
-        );
-    }
-    30% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #141313 4vw,
-          darken(#141313, 20%) 8vw,
-          lighten(#141313, 20%) 20vw
-        );
-    }
-    33% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #161414 4vw,
-          darken(#161414, 20%) 8vw,
-          lighten(#161414, 20%) 20vw
-        );
-    }
-    37% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #191616 4vw,
-          darken(#191616, 20%) 8vw,
-          lighten(#191616, 20%) 20vw
-        );
-    }
-    40% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #1d1818 4vw,
-          darken(#1d1818, 20%) 8vw,
-          lighten(#1d1818, 20%) 20vw
-        );
-    }
-    44% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #241b1b 4vw,
-          darken(#241b1b, 20%) 8vw,
-          lighten(#241b1b, 20%) 20vw
-        );
-    }
-    47% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #291d1d 4vw,
-          darken(#291d1d, 20%) 8vw,
-          lighten(#291d1d, 20%) 20vw
-        );
-    }
-    51% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #372424 4vw,
-          darken(#372424, 20%) 8vw,
-          lighten(#372424, 20%) 20vw
-        );
-    }
-    54% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #462b2b 4vw,
-          darken(#462b2b, 20%) 8vw,
-          lighten(#462b2b, 20%) 20vw
-        );
-    }
-    58% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #4f2e2e 4vw,
-          darken(#4f2e2e, 20%) 8vw,
-          lighten(#4f2e2e, 20%) 20vw
-        );
-    }
-    61% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #663737 4vw,
-          darken(#663737, 20%) 8vw,
-          lighten(#663737, 20%) 20vw
-        );
-    }
-    65% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #703737 4vw,
-          darken(#703737, 20%) 8vw,
-          lighten(#703737, 20%) 20vw
-        );
-    }
-    68% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #813737 4vw,
-          darken(#813737, 20%) 8vw,
-          lighten(#813737, 20%) 20vw
-        );
-    }
-    72% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #8e3535 4vw,
-          darken(#8e3535, 20%) 8vw,
-          lighten(#8e3535, 20%) 20vw
-        );
-    }
-    75% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #983030 4vw,
-          darken(#983030, 20%) 8vw,
-          lighten(#983030, 20%) 20vw
-        );
-    }
-    79% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #9e2a2a 4vw,
-          darken(#9e2a2a, 20%) 8vw,
-          lighten(#9e2a2a, 20%) 20vw
-        );
-    }
-    82% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #a82525 4vw,
-          darken(#a82525, 20%) 8vw,
-          lighten(#a82525, 20%) 20vw
-        );
-    }
-    86% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #ab1e1e 4vw,
-          darken(#ab1e1e, 20%) 8vw,
-          lighten(#ab1e1e, 20%) 20vw
-        );
-    }
-    89% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #b31818 4vw,
-          darken(#b31818, 20%) 8vw,
-          lighten(#b31818, 20%) 20vw
-        );
-    }
-    93% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #c71010 4vw,
-          darken(#c71010, 20%) 8vw,
-          lighten(#c71010, 20%) 20vw
-        );
-    }
-    96% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #e40808 4vw,
-          darken(#e40808, 20%) 8vw,
-          lighten(#e40808, 20%) 20vw
-        );
-    }
-    100% {
-      background:
-        repeating-linear-gradient(
-          to left,
-          #ff0000 4vw,
-          darken(#ff0000, 20%) 8vw,
-          lighten(#ff0000, 20%) 20vw
-        );
-    }
+// ...código existente...
+@keyframes mymove {
+  0% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #000000 4vw,
+        darken(#000000, 20%) 8vw,
+        adjust-color(#1f1d1d, $lightness: 20%) 20vw
+      );
   }
+  29% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #000000 4vw,
+        darken(#000000, 20%) 8vw,
+        adjust-color(#000000, $lightness: 20%) 20vw
+      );
+  }
+  30% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #141313 4vw,
+        darken(#141313, 20%) 8vw,
+        adjust-color(#141313, $lightness: 20%) 20vw
+      );
+  }
+  33% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #161414 4vw,
+        darken(#161414, 20%) 8vw,
+        adjust-color(#161414, $lightness: 20%) 20vw
+      );
+  }
+  37% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #191616 4vw,
+        darken(#191616, 20%) 8vw,
+        adjust-color(#191616, $lightness: 20%) 20vw
+      );
+  }
+  40% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #1d1818 4vw,
+        darken(#1d1818, 20%) 8vw,
+        adjust-color(#1d1818, $lightness: 20%) 20vw
+      );
+  }
+  44% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #241b1b 4vw,
+        darken(#241b1b, 20%) 8vw,
+        adjust-color(#241b1b, $lightness: 20%) 20vw
+      );
+  }
+  47% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #291d1d 4vw,
+        darken(#291d1d, 20%) 8vw,
+        adjust-color(#291d1d, $lightness: 20%) 20vw
+      );
+  }
+  51% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #372424 4vw,
+        darken(#372424, 20%) 8vw,
+        adjust-color(#372424, $lightness: 20%) 20vw
+      );
+  }
+  54% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #462b2b 4vw,
+        darken(#462b2b, 20%) 8vw,
+        adjust-color(#462b2b, $lightness: 20%) 20vw
+      );
+  }
+  58% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #4f2e2e 4vw,
+        darken(#4f2e2e, 20%) 8vw,
+        adjust-color(#4f2e2e, $lightness: 20%) 20vw
+      );
+  }
+  61% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #663737 4vw,
+        darken(#663737, 20%) 8vw,
+        adjust-color(#663737, $lightness: 20%) 20vw
+      );
+  }
+  65% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #703737 4vw,
+        darken(#703737, 20%) 8vw,
+        adjust-color(#703737, $lightness: 20%) 20vw
+      );
+  }
+  68% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #813737 4vw,
+        darken(#813737, 20%) 8vw,
+        adjust-color(#813737, $lightness: 20%) 20vw
+      );
+  }
+  72% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #8e3535 4vw,
+        darken(#8e3535, 20%) 8vw,
+        adjust-color(#8e3535, $lightness: 20%) 20vw
+      );
+  }
+  75% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #983030 4vw,
+        darken(#983030, 20%) 8vw,
+        adjust-color(#983030, $lightness: 20%) 20vw
+      );
+  }
+  79% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #9e2a2a 4vw,
+        darken(#9e2a2a, 20%) 8vw,
+        adjust-color(#9e2a2a, $lightness: 20%) 20vw
+      );
+  }
+  82% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #a82525 4vw,
+        darken(#a82525, 20%) 8vw,
+        adjust-color(#a82525, $lightness: 20%) 20vw
+      );
+  }
+  86% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #ab1e1e 4vw,
+        darken(#ab1e1e, 20%) 8vw,
+        adjust-color(#ab1e1e, $lightness: 20%) 20vw
+      );
+  }
+  89% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #b31818 4vw,
+        darken(#b31818, 20%) 8vw,
+        adjust-color(#b31818, $lightness: 20%) 20vw
+      );
+  }
+  93% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #c71010 4vw,
+        darken(#c71010, 20%) 8vw,
+        adjust-color(#c71010, $lightness: 20%) 20vw
+      );
+  }
+  96% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #e40808 4vw,
+        darken(#e40808, 20%) 8vw,
+        adjust-color(#e40808, $lightness: 20%) 20vw
+      );
+  }
+  100% {
+    background:
+      repeating-linear-gradient(
+        to left,
+        #ff0000 4vw,
+        darken(#ff0000, 20%) 8vw,
+        adjust-color(#ff0000, $lightness: 20%) 20vw
+      );
+  }
+}
+// ...código existente...
+// ...código existente...
 
 
 

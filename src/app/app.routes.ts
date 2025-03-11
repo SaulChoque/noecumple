@@ -10,26 +10,26 @@ export const routes: Routes = [
   {
     path: '',
     component: OpeningBlockComponent,
-    title: ''
+    title: 'Atencion'
   },
   {
     path: 'b',
     component: CurtainBlockComponent,
-    title: 'fliz'
+    title: 'Habia Una Vez'
   },
   {
     path: 'c',
     component: ScrollBlockComponent,
-    title: 'fliz'
+    title: 'Etapas'
   },
   {
     path: 'd',
     component: NumberBlockComponent,
-    title: 'fliz'
+    title: 'QuinceAños'
   },
   {
     path: 'e',
     component: InfoBlockComponent,
-    title: 'fliz'
+    title: 'Invitacion'
   },
 ];

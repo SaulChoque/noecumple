@@ -1,13 +1,12 @@
 import { Component, HostListener, Renderer2, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppStateService } from '../../services/app-state.service';
 
 @Component({
   selector: 'app-curtain-block',
   templateUrl: './curtain-block.component.html',
   styleUrls: ['./curtain-block.component.scss']
 })
-export class CurtainBlockComponent implements OnInit {
+export class CurtainBlockComponent {
   private startY: number = 0;
   private scrollCount: number = 0;
   private animationDuration: number = 2000; // Duración de la animación en milisegundos
@@ -15,16 +14,9 @@ export class CurtainBlockComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private renderer: Renderer2,
-    private appStateService: AppStateService
+    private renderer: Renderer2
   ) {}
 
-  ngOnInit() {
-    if (this.appStateService.getIsPageReloaded()) {
-      this.router.navigate(['']); // Redirige a la ruta raíz
-      this.appStateService.resetPageReloadedFlag();
-    }
-  }
 
   @HostListener('window:touchstart', ['$event'])
   onWindowTouchStart(event: TouchEvent) {
@@ -55,7 +47,4 @@ export class CurtainBlockComponent implements OnInit {
     }
   }
 
-  resetPage() {
-    // Reinicia el estado del componente aquí
-  }
 }

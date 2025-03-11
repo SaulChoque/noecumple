@@ -1,9 +1,6 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter, Routes, withViewTransitions, withComponentInputBinding } from '@angular/router';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideAnimations } from '@angular/platform-browser/animations';
-import { CurrentTransitionService, onViewTransitionCreated } from './services/CurrentTransition.service';
-
+import { provideRouter, withViewTransitions, withComponentInputBinding } from '@angular/router';
+import { onViewTransitionCreated } from './services/CurrentTransition.service';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
